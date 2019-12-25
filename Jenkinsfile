@@ -13,7 +13,7 @@ node{
    sh 'docker push nippy/myapp.$BUILD_NUMBER'
   }
   stage('Deploy an Application'){
-   sh 'docker run -d  -p 8083:8080 nippy/myapp.$BUILD_NUMBER  '
+   sh 'docker run -d  -p 8003:8080 nippy/myapp.$BUILD_NUMBER  '
   }
   stage('This is deployed '){
    sh 'echo " this is done'
