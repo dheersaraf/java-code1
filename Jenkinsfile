@@ -13,9 +13,9 @@ node{
    sh 'docker push nippy/myapp.$BUILD_NUMBER'
   }
   stage('Deploy an Application'){
-   sh 'kubectl run myapp --image=nippy/myapp.$BUILD_NUMBER --restart=Never'
+   sh 'docker  -d  -p 8083:8080 nippy/myapp.$BUILD_NUMBER  '
   }
-  stage('Create Service to access '){
-   sh 'kubectl expose pod myapp --port=8080 --type=LoadBalancer  --name=myapp'
+  stage('This is deployed '){
+   sh 'echo " this is done'
   }
 }
